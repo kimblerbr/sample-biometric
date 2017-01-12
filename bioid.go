@@ -36,7 +36,7 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) ([]byte, error)
 
 // Invoke isur entry point to invoke a chaincode function
 func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
-	_, args := stub.GetFunctionAndParameters()
+	function, args := stub.GetFunctionAndParameters()
 	fmt.Println("invoke is running " + function)
 
 	var a,b,c,d string
@@ -67,7 +67,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, erro
 
 // Query is our entry point for queries
 func (t *SimpleChaincode) Query(stub shim.ChaincodeStubInterface) ([]byte, error) {
-	_, args := stub.GetFunctionAndParameters()
+	function, args := stub.GetFunctionAndParameters()
 	fmt.Println("query is running " + function)
 
 	// Handle different functions
