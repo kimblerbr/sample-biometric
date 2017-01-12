@@ -52,9 +52,7 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, erro
 	kv := []string{e,b}
 
 	// Handle different functions
-	if function == "init" {
-		return t.Init(stub, args)
-	} else if function == "write" {
+	if function == "write" {
 		return t.write(stub, kv)
 	} else if function == "read" {
 		return t.read(stub, args)
